@@ -1,0 +1,149 @@
+* {
+    margin : 0px;
+    padding : 0px;
+    font-size:calc(8px + 0.4vw);
+    font-family: Montserrat;
+}
+
+@font-face{
+    font-family : Montserrat;
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+body {
+    color:white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-color: #080903;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color : #5aeafa;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+hr {
+    margin : 10px;
+    margin-left : 40px;
+    margin-right : 40px;
+    background-color: #1a8a9a;
+    border: 0 none;
+    color: #eee;
+    height: 1px;
+}
+
+a:visited {
+    color : #5aeafa;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+a:hover {
+    color: #bd5a35;
+    text-decoration:underline;
+}
+
+#searchbar {
+    width : 100%;
+    height : 25px;
+}
+#searchButton {
+    width : 100%;
+    height : 25px;
+}
+
+#txgraph {
+    width: 100%;
+    height: 100%;
+}
+
+#information {
+    opacity : 0.7;
+    position : absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width : 20%;
+    background-color : #000000;
+}
+
+#copyright {
+    position:absolute;
+    bottom: 0px;
+    left : 0px;
+}
+
+#timestamp {
+    color:white;
+    font-size:calc(10px + 1.2vw);
+}
+
+#totalTx {
+    color:white;
+    font-size:calc(10px + 1.2vw);
+}
+
+#progress {
+    color:white;
+    font-size:calc(10px + 1.2vw);
+}
+
+#nodeinfo {
+    word-wrap: break-word;
+}
+#nodeTracker {
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
+}
+
+#controls {
+    overflow: auto;
+}
+
+#toggleTxLinksShow {
+    cursor: pointer;
+}
+
+#pauseButton {
+    font-size : 1vw;
+    height : calc(15px + 1.5vh);
+    width : calc(15px + 1.5vw);
+    color: #5aeafa;
+    background : black;
+    padding : 3px;
+    padding-bottom : 5px;
+}
+
+#progressContainer {
+    width : 100%;
+    border : 1px solid #1a9aaa;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height : 30px;
+}
+
+#progressBar {
+    width : 0%;
+    background-image: linear-gradient(#5aeafa, #000000);
+    height : 29px;
+}
+
+#logo {
+    width: 170px;
+    height: 60px;
+    background: url(/static/media/logo-icon.svg) 0 0 no-repeat;
+}
+
+#logoContainer {
+  width: 100%;
+  margin: 0 auto;
+}

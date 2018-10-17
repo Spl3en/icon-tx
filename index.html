@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>ICON Transactions History</title>
+
+        <script src="/js/lib/vivagraph.js"></script>
+        <script src="/js/icon-tx/Address.js"></script>
+        <script src="/js/icon-tx/AddressDb.js"></script>
+        <script src="/js/icon-tx/Transaction.js"></script>
+        <script src="/js/icon-tx/TransactionDb.js"></script>
+        <script src="/js/icon-tx/TransactionGraphLogicProcessor.js"></script>
+        <script src="/js/icon-tx/TransactionGraphGraphicProcessor.js"></script>
+        <script src="/js/icon-tx/TransactionGraph.js"></script>
+        <script src="/js/icon-tx/main.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="/static/styles/index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    </head>
+
+    <body onload="applicationMain()">
+        <div id='txgraph'></div>
+        <div id='information'>
+            <div id="logoContainer">
+                <object type="image/svg+xml" data="/static/media/logo-icon.svg">ICON Tx Monitor</object>
+            </div>
+
+            <br>
+            Current Time :
+            <div id='timestamp'></div>
+            <hr/>
+            
+            Progress :
+            <div id='progress'></div>
+            <hr/>
+            
+            Total Transactions :
+            <div id='totalTx'></div>
+            <hr/>
+            
+            Node Information (left click on a node) :
+            <div id='nodeTracker'></div>
+            <div id='nodeinfo'></div>
+            <div id='showtxlinks'></div>
+            <hr/>
+
+            Controls :
+            <div id='controls'>
+                <button id='pauseButton' onclick='togglePause()'><i class="fa fa-pause"></i></button>
+                <button id='pauseButton' onclick='clickBackward()'><i class="fa fa-backward"></i></button>
+                <button id='pauseButton' onclick='clickForward()'><i class="fa fa-forward"></i></button>
+                <div id="txPerTick"></div>
+                <div id="progressContainer"><div id="progressBar"></div></div>
+            </div>
+            <br>
+            <hr/>
+
+            <div id='searchbarContainer'>
+                <input id='searchbar' placeholder="ICON hx address"/>
+                <br>
+                <button onClick='searchDo()' id='searchButton'>Search</button>
+            </div>
+        </div>
+
+        <div id='copyright'>
+            <img src="/static/media/github.png"/> <a href="https://github.com/Spl3en/icon-tx">Github source code</a>
+            <br>Made with <font color="red">♥</font> by <a href="https://twitter.com/Spl3en_ICON">Spl3en</a>
+        </div>
+
+        <script type="text/javascript">
+            var progressContainer = document.getElementById('progressContainer');
+
+            progressContainer.addEventListener('click', function (e) {
+                var offset = this.getClientRects()[0];
+                progressBarOnClick (this.offsetWidth, e.clientX - offset.left);
+            }, false);
+        </script>
+    </body>
+</html>
