@@ -5,8 +5,6 @@ class TransactionDb
     constructor(txData, addressDb) {
         this.dbIndex = []
         this.dbHash = []
-        // https://tracker.icon.foundation/v3/transaction/recentTx?page=70&count=1000
-        // https://tracker.icon.foundation/v3/transaction/recentTx?page=1&count=70000
         this.raw = txData;
         this.id = 0;
         this.addressDb = addressDb;
@@ -14,8 +12,9 @@ class TransactionDb
 
     process (addressDb)
     {
-        for (let [key, tx] of Object.entries(this.raw["data"].reverse()))
+        for (let txid in this.raw)
         {
+            let tx = this.raw[txid]
             let fromAddr = tx["fromAddr"];
             let toAddr = tx["toAddr"];
             let amount = parseFloat(tx["amount"]);
@@ -26,7 +25,8 @@ class TransactionDb
             if (fromAddr != null)
             {
                 if (!addressDb.exists(fromAddr)) {
-                    throw "Cannot withdraw from unknown address : " + fromAddr;
+                    // throw "Cannot withdraw from unknown address : " + fromAddr;
+                    console.log("Cannot withdraw from unknown address : " + fromAddr);
                 }
                 // addressDb.withdraw(fromAddr, amount)
             }
@@ -37,7 +37,6 @@ class TransactionDb
                 if (!addressDb.exists(toAddr)) {
                     addressDb.create(toAddr);
                 }
-
                 // addressDb.deposit(toAddr, amount);
             }
 

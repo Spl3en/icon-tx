@@ -147,3 +147,12 @@ a:hover {
   width: 100%;
   margin: 0 auto;
 }
+
+#downloading {
+    font-size:calc(16px + 0.4vw);
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    background:#333333;
+    padding : 30px;
+}
