@@ -2,7 +2,7 @@ async function applicationMain ()
 {
     let addressDb = new AddressDb();
 
-    let url = '/static/json/database.json'
+    let url = 'static/json/database.json'
     console.log ("Fetching " + url + "...")
     let txData = await fetch (url, {cache: "no-cache"}).then (res => res.json());
 
